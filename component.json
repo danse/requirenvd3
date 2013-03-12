@@ -1,0 +1,9 @@
+{
+  "name": "requirenvd3",
+  "version": "0.0.0",
+  "dependencies": {
+    "requirejs": "~2.1.5",
+    "d3": "~3.0.8",
+    "nvd3": "git://github.com/novus/nvd3.git"
+  }
+}
