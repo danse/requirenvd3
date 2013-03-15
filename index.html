@@ -1,5 +1,5 @@
 <html>
-<body>
+<head>
 <script>
 var require = {
   paths: {
@@ -16,30 +16,19 @@ nv.addGraph(function() {
     console.log(data);
     var chart = nv.models.multiBarChart();
 
-    chart.xAxis
-        .tickFormat(d3.format(',f'));
-
-    chart.yAxis
-        .tickFormat(d3.format(',.1f'));
-
-    d3.select('#chart1 svg')
-        .datum(data)
-      .transition().duration(500).call(chart);
-
-    nv.utils.windowResize(chart.update);
+    d3.select('svg').datum(data).transition().call(chart);
 
     return chart;
 });
 
 function exampleData() {
   return stream_layers(3,10+Math.random()*100,.1).map(function(data, i) {
-    return {
-      key: 'Stream' + i,
-      values: data
-    };
+    return { key: 'Stream' + i, values: data };
   });
 }
 });
 </script>
-<div id='chart1'><svg></svg></div>
+</head>
+<body>
+<svg></svg>
 </body>
