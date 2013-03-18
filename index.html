@@ -1,16 +1,14 @@
 <html>
 <head>
-<script src="/components/requirejs/require.js"></script>
 <script src="/components/d3/d3.js" charset="utf-8"></script>
 <script src="/components/nvd3/nv.d3.js"></script>
+<script src="bareData.js"></script>
 <script>
-require(['/data.js'], function(data){
 nv.addGraph(function() {
     console.log(data);
     var chart = nv.models.multiBarChart();
     d3.select('svg').datum(data).transition().call(chart);
     return chart;
-});
 });
 </script>
 </head>
